@@ -15,14 +15,19 @@ Oxlint configuration for all my projects.
 
 ## Usage
 
-Add a file `.oxlintrc.json` to your project, and adapt:
+Add a file `oxlint.config.ts` to your project, and adapt:
 
-```js
+```ts
 import config from "@coderbyheart/oxlint-config";
 import { defineConfig } from "oxlint";
 
 export default defineConfig({
   extends: [config],
+  // The `typescript/*` rules in this config need type information. Oxlint only
+  // accepts this option in the root config, so it has to be set here.
+  options: {
+    typeAware: true,
+  },
 });
 ```
 

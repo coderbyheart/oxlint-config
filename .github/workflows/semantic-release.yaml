@@ -33,7 +33,7 @@ jobs:
         run: npx oxlint
 
       - name: Check if source code is properly formatted
-        run: npx prettier -c ./
+        run: npx oxfmt --check
 
       - run: npm test
 

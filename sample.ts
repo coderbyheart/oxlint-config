@@ -1,1 +1,1 @@
-export const sample = (): boolean => false
+export const sample = (): boolean => false;

@@ -2,20 +2,44 @@
   "name": "@coderbyheart/oxlint-config",
   "version": "0.0.0-development",
   "description": "Oxlint config for my projects.",
-  "type": "module",
+  "keywords": [
+    "oxlint"
+  ],
+  "homepage": "https://github.com/coderbyheart/oxlint-config#readme",
+  "bugs": {
+    "url": "https://github.com/coderbyheart/oxlint-config/issues"
+  },
+  "license": "MIT",
+  "author": "Markus Tacker | https://coderbyheart.com",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/coderbyheart/oxlint-config.git"
   },
-  "bugs": {
-    "url": "https://github.com/coderbyheart/oxlint-config/issues"
-  },
-  "homepage": "https://github.com/coderbyheart/oxlint-config#readme",
-  "keywords": [
-    "oxlint"
+  "files": [
+    "index.js",
+    "LICENSE",
+    "README.md",
+    "index.d.ts",
+    "config.json"
   ],
-  "author": "Markus Tacker | https://coderbyheart.com",
-  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "oxlint *.ts",
+    "prepare": "husky && case \"$npm_command\" in install|ci) check-node-version --package ;; esac"
+  },
+  "dependencies": {
+    "@stylistic/eslint-plugin": "6.0.0",
+    "eslint-plugin-prefer-arrow": "1.2.3"
+  },
   "devDependencies": {
     "@commitlint/config-conventional": "21.2.4",
     "@eslint/js": "^10.0.1",
@@ -25,14 +49,14 @@
     "lint-staged": "17.6.0",
     "oxfmt": "0.78.0"
   },
-  "lint-staged": {
-    "*.{yml,md,js,json}": [
-      "prettier --write"
-    ]
+  "peerDependencies": {
+    "oxlint": ">=1.93.0 <2",
+    "tsrs": ">=0.25.0-ts7.1.0-beta <2"
   },
-  "engines": {
-    "node": ">=24.22.1 <25 || >=26.12.1 <27",
-    "npm": ">=12.0.2 <13"
+  "lint-staged": {
+    "*.{yml,md,js,json,ts}": [
+      "oxfmt"
+    ]
   },
   "release": {
     "branches": [
@@ -52,24 +76,8 @@
       ]
     ]
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "files": [
-    "index.js",
-    "LICENSE",
-    "README.md"
-  ],
-  "scripts": {
-    "test": "oxlint *.ts",
-    "prepare": "husky && case \"$npm_command\" in install|ci) check-node-version --package ;; esac"
-  },
-  "peerDependencies": {
-    "oxlint": ">=1.93.0 <2",
-    "tsrs": ">=0.25.0-ts7.1.0-beta <2"
-  },
-  "dependencies": {
-    "@stylistic/eslint-plugin": "6.0.0",
-    "eslint-plugin-prefer-arrow": "1.2.3"
+  "engines": {
+    "node": ">=24.22.1 <25 || >=26.12.1 <27",
+    "npm": ">=12.0.2 <13"
   }
 }
