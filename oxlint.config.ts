@@ -1,5 +1,5 @@
-import { defineConfig } from "oxlint";
-import config from "./index.js";
+import { defineConfig } from "oxlint"
+import config from "./index.js"
 
 export default defineConfig({
   extends: [config],
@@ -7,4 +7,4 @@ export default defineConfig({
     typeAware: true,
   },
   ignorePatterns: ["commitlint.config.cjs"],
-});
+})

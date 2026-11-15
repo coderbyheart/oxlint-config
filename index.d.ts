@@ -1,5 +1,5 @@
-import type { OxlintConfig } from "oxlint";
+import type { OxlintConfig } from "oxlint"
 
-declare const config: OxlintConfig;
+declare const config: OxlintConfig
 
-export default config;
+export default config

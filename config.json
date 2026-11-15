@@ -1,7 +1,10 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
   "plugins": ["typescript", "unicorn"],
-  "jsPlugins": ["@stylistic/eslint-plugin", "eslint-plugin-prefer-arrow"],
+  "jsPlugins": [
+    { "name": "@stylistic", "specifier": "@stylistic/eslint-plugin" },
+    { "name": "prefer-arrow", "specifier": "eslint-plugin-prefer-arrow" }
+  ],
   "categories": {
     "correctness": "off"
   },
