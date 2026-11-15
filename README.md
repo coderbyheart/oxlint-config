@@ -18,8 +18,8 @@ Oxlint configuration for all my projects.
 Add a file `oxlint.config.ts` to your project, and adapt:
 
 ```ts
-import config from "@coderbyheart/oxlint-config";
-import { defineConfig } from "oxlint";
+import config from "@coderbyheart/oxlint-config"
+import { defineConfig } from "oxlint"
 
 export default defineConfig({
   extends: [config],
@@ -28,7 +28,23 @@ export default defineConfig({
   options: {
     typeAware: true,
   },
-});
+})
+```
+
+### Oxfmt
+
+This config enforces
+[`@stylistic/member-delimiter-style`](https://eslint.style/rules/member-delimiter-style),
+which disallows semicolons after the members of multi-line types. Configure
+[oxfmt](https://oxc.rs/docs/guide/usage/formatter.html) to not print
+semicolons, so the formatter and the linter agree, by adding a file
+`.oxfmtrc.json` to your project:
+
+```json
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "semi": false
+}
 ```
 
 ### Node.js type stripping

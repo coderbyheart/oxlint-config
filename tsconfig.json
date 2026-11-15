@@ -15,6 +15,8 @@
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "erasableSyntaxOnly": true,
-    "noEmit": true
+    "noEmit": true,
+    "types": ["node"],
+    "allowJs": true
   }
 }
